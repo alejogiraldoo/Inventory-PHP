@@ -7,7 +7,26 @@
     <title>Agregar</title>
 </head>
 <body>
-    <a href="../../backEnd/inventario.php">Ir a Inventario |</a>
+    <a href="inventario.php">Ir a Inventario |</a>
     <h1>Agregar Producto</h1>
+
+    <form action="agregar.php" method="POST">
+        <label for="codigo">Codigo:</label>
+        <input name="codigo" id="codigo" type="number" min="0" required>
+        <br><br>
+        <label for="nombre">Nombre:</label>
+        <input name="nombre" id="nombre" type="text" required>
+        <br><br>
+        <label for="precio">Precio:</label>
+        <input name="precio" id="precio" type="number" min="0" required>
+        <br><br>
+        <label for="cantidad">Cantidad:</label>
+        <input name="cantidad" id="cantidad" type="number" min="0" required>
+        <br><br>
+        <label for="sucursal">Sucursal:</label>
+        <input name="sucursal" id="sucursal" type="text" min="0" required>
+        <br><br>
+        <input name="agregar" value="Agregar" type="submit">
+    </form>
 </body>
 </html>

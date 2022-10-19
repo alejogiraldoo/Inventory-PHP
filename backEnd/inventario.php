@@ -1,5 +1,4 @@
 <?php
-    // include "conexionBD.php";
     include "Producto.php";
     include "../frontEnd/inventario/inventario.html";
 
@@ -39,5 +38,4 @@
         }
         echo"</table>";
     }
-
 ?>
