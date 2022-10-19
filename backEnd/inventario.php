@@ -1,7 +1,6 @@
 <?php
-    // include "conexionBD.php";
-    include "Producto.php";
     include "../frontEnd/inventario/inventario.html";
+    include "Producto.php";
 
     session_start();
     if (!isset($_SESSION["productos"])){
@@ -39,5 +38,4 @@
         }
         echo"</table>";
     }
-
 ?>
