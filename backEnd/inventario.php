@@ -1,8 +1,8 @@
 <?php
     include "../frontEnd/inventario/inventario.html";
     include "Producto.php";
-
     session_start();
+
     if (!isset($_SESSION["productos"])){
         $_SESSION["productos"] = array();
     }
@@ -32,6 +32,7 @@
                     <td>
                         <a href='actualizar.php?codigo=".$_SESSION["productos"][$i]->getCodigo()."&nombre=".$_SESSION["productos"][$i]->getNombre()."&precio=".$_SESSION["productos"][$i]->getPrecio()."&cantidad=".$_SESSION["productos"][$i]->getCantidad()."&sucursal=".$_SESSION["productos"][$i]->getSucursal()."'>Actualizar |</a>
                         <a href='eliminar.php?codigo=".$_SESSION["productos"][$i]->getCodigo()."'>Eliminar</a>
+                        <a href='vender.php?codigo=".$_SESSION["productos"][$i]->getCodigo()."&nombre=".$_SESSION["productos"][$i]->getNombre()."&precio=".$_SESSION["productos"][$i]->getPrecio()."&cantidad=".$_SESSION["productos"][$i]->getCantidad()."&sucursal=".$_SESSION["productos"][$i]->getSucursal()."'>Vender</a>
                     </td>
                 </tr>
             ";

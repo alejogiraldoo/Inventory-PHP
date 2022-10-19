@@ -24,9 +24,9 @@
         }
 
         if($sent) {
-            echo "Los datos han sido actualizados.";
+            echo "Los datos han sido actualizados.<br><br>";
         } else {
-            echo "Hubo un error en los datos actualizados.";
+            echo "Hubo un error en los datos actualizados.<br><br>";
         }
 
     }
