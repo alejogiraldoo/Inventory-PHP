@@ -9,7 +9,7 @@
     
     if (empty($_SESSION["productos"])){
       echo "No hay productos agregados";
-    }else{
+    } else {
         echo "
         <table border='1'>
             <tr>
@@ -31,7 +31,7 @@
                     <td>".$_SESSION["productos"][$i]->getSucursal()."</td>
                     <td>
                         <a href='actualizar.php?codigo=".$_SESSION["productos"][$i]->getCodigo()."&nombre=".$_SESSION["productos"][$i]->getNombre()."&precio=".$_SESSION["productos"][$i]->getPrecio()."&cantidad=".$_SESSION["productos"][$i]->getCantidad()."&sucursal=".$_SESSION["productos"][$i]->getSucursal()."'>Actualizar |</a>
-                        <a href='eliminar.php?codigo=".$_SESSION["productos"][$i]->getCodigo()."'>Eliminar</a>
+                        <a href='eliminar.php?codigo=".$_SESSION["productos"][$i]->getCodigo()."'>Eliminar |</a>
                         <a href='vender.php?codigo=".$_SESSION["productos"][$i]->getCodigo()."&nombre=".$_SESSION["productos"][$i]->getNombre()."&precio=".$_SESSION["productos"][$i]->getPrecio()."&cantidad=".$_SESSION["productos"][$i]->getCantidad()."&sucursal=".$_SESSION["productos"][$i]->getSucursal()."'>Vender</a>
                     </td>
                 </tr>

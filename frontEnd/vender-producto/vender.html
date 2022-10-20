@@ -9,5 +9,20 @@
 <body>
     <a href="inventario.php">Ir a Inventario |</a>
     <h1>Vender Producto</h1>
+
+    <form action="vender.php" method="GET">
+        <h2>Información del Cliente</h2>
+        <label for="ced_cliente">Cedula del Cliente:</label>
+        <input name="ced_cliente" id="ced_cliente" type="number" maxlength="10" minlength="10" required>
+        <br><br>
+        <label for="nom_cliente">Nombre del Cliente:</label>
+        <input name="nom_cliente" id="nom_cliente" type="text" required>
+        <br><br>
+        <label for="tel_cliente">Telefono del Cliente:</label>
+        <input name="tel_cliente" id="tel_cliente" type="tel" required maxlength="10" minlength="10">
+        <br><br>
+        <label for="dir_cliente">Direccion del Cliente:</label>
+        <input name="dir_cliente" id="dir_cliente" type="text" required>
+        <br><br>
 </body>
 </html>
