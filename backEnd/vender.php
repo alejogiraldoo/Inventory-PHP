@@ -11,24 +11,31 @@
         if($_SESSION["productos"][$i]->getCodigo() == $codigo) {
             echo '
             <h2>Informacion del Producto</h2>
-            <label for="codigo">Codigo:</label>
-            <input name="codigo" id="codigo" type="number" value="'.$codigo.'" readonly>
-            <br><br>
-            <label for="nombre">Nombre:</label>
-            <input name="nombre" id="nombre" type="text" value="'.$_SESSION["productos"][$i]->getNombre().'" readonly>
-            <br><br>
-            <label for="precio">Precio:</label>
-            <input name="precio" id="precio" type="number" value="'.$_SESSION["productos"][$i]->getPrecio().'" readonly>
-            <br><br>
-            <label for="cantidad">Cantidad:</label>
-            <input name="cantidad" id="cantidad" type="number" min="1" required>
-            <br><br>
-            <label for="sucursal">Sucursal:</label>
-            <input name="sucursal" id="sucursal" type="text" value="'.$_SESSION["productos"][$i]->getSucursal().'" readonly>
-            <br><br>
-            <input name="vender" type="submit" value="Vender">
-            <br><br>
-            </form>
+                <form action="vender.php" method="get">
+                    <div class="mb-3">
+                        <label for="exampleInputText1" class="form-label">Codigo</label>
+                        <input name="codigo" type="number" class="form-control" id="exampleInputText" aria-describedby="textHelp" value="'.$codigo.'" readonly/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputText1" class="form-label">Nombre del Producto</label>
+                        <input name="nombre" type="text" class="form-control" id="exampleText1" required value="'.$_SESSION["productos"][$i]->getNombre().'"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputText1" class="form-label">Precio</label>
+                        <input name="precio" type="number" class="form-control" id="exampleText1" required value="'.$_SESSION["productos"][$i]->getPrecio().'"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Cantidad</label>
+                        <input name="cantidad" type="number" class="form-control" id="exampleInputPassword1" required/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Sucursal</label>
+                        <input name="sucursal" type="text" class="form-control" id="exampleInputPassword1" required value="'.$_SESSION["productos"][$i]->getSucursal().'"/>
+                    </div>
+                    <button name="vender" type="submit" class="btn btn-primary">Realizar Venta</button>
+                    <br><br>
+                </form>
+            </main>
             '; 
             break;
         }

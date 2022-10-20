@@ -1,8 +1,10 @@
 <?php
-    include "../frontEnd/registro/registro.html";
+    include "../frontEnd/registro/registro.html";/* 
+    echo "".include '../frontEnd/registro/registro.css'.""; */
     include "Trabajador.php";
 
     session_start();
+
     
     if (!isset($_SESSION["cuentas"])){
         $_SESSION["cuentas"] = array();

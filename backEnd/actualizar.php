@@ -26,9 +26,13 @@
         }
 
         if($sent) {
-            echo "Los datos han sido actualizados.<br><br>";
+            echo "<script>
+            window.alert('Los datos han sido actualizados exitosamente. ');
+            </script>";
         } else {
-            echo "Hubo un error en los datos actualizados.<br><br>";
+            echo "<script>
+            window.alert('Hubo un error en los datos a actualizar. ');
+            </script>";
         }
 
     }
@@ -39,23 +43,30 @@
     $precio = $_GET["precio"];
     $sucursal = $_GET["sucursal"];
     echo '
-        <form action="actualizar.php" method="GET">
-            <label for="codigo">Codigo:</label>
-            <input name="codigo" id="codigo" type="number" value="'.$codigo.'" readonly>
-            <br><br>
-            <label for="nombre">Nombre:</label>
-            <input name="nombre" id="nombre" type="text" value="'.$nombre.'">
-            <br><br>
-            <label for="precio">Precio:</label>
-            <input name="precio" id="precio" type="number" value="'.$precio.'">
-            <br><br>
-            <label for="cantidad">Cantidad:</label>
-            <input name="cantidad" id="cantidad" type="number" value="'.$cantidad.'">
-            <br><br>
-            <label for="sucursal">Sucursal:</label>
-            <input name="sucursal" id="sucursal" type="text" value="'.$sucursal.'">
-            <br><br>
-            <input name="actualizar" value="Actualizar" type="submit">
-        </form>
+        <main>
+            <form action="actualizar.php" method="get">
+                <div class="mb-3">
+                    <label for="exampleInputText1" class="form-label">Codigo</label>
+                    <input name="codigo" type="number" class="form-control" id="exampleInputText" aria-describedby="textHelp" value="'.$codigo.'" readonly/>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputText1" class="form-label">Nombre del Producto</label>
+                    <input name="nombre" type="text" class="form-control" id="exampleText1" required value="'.$nombre.'"/>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputText1" class="form-label">Precio</label>
+                    <input name="precio" type="number" class="form-control" id="exampleText1" required value="'.$precio.'"/>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Cantidad</label>
+                    <input name="cantidad" type="number" class="form-control" id="exampleInputPassword1" required value="'.$cantidad.'"/>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Sucursal</label>
+                    <input name="sucursal" type="text" class="form-control" id="exampleInputPassword1" required value="'.$sucursal.'"/>
+                </div>
+                <button name="actualizar" type="submit" class="btn btn-primary">Actualizar</button>
+            </form>
+        </main>
     ';
 ?>
