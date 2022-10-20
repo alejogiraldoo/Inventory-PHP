@@ -39,7 +39,7 @@
     echo '
         <form action="actualizar.php" method="GET">
             <label for="codigo">Codigo:</label>
-            <input name="codigo" id="codigo" type="number" value="'.$codigo.'">
+            <input name="codigo" id="codigo" type="number" value="'.$codigo.'" readonly>
             <br><br>
             <label for="nombre">Nombre:</label>
             <input name="nombre" id="nombre" type="text" value="'.$nombre.'">

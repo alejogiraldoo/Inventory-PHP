@@ -26,26 +26,30 @@
     }
     
     if(isset($_POST["iniciar-sesion"])) {
-        $sent = false;
-        $user = $_POST["user"];
+        $sentUser = false;
+        $sentPass = false;
+        $_SESSION["user"] = $_POST["user"];
         $pass = $_POST["pass"];
 
         for ($i=0; $i < count($_SESSION["cuentas"]); $i++) { 
-            if($_SESSION["cuentas"][$i]->getUsuario() == $user && $_SESSION["cuentas"][$i]->getContrasena() == $pass) {
-                $sent = true;
-                if($sent) {
-                    if($_SESSION["cuentas"][$i]->getRol() == "2") {
-                        echo "usted es admin";
-                    } else if($_SESSION["cuentas"][$i]->getRol() == "1") {
-                        echo "usted es vendedor";
-                    } else {
-                        echo "hubo un error en el proceso";
-                    }
-                } else {
-                    echo "la cuenta no existe";
+            if($_SESSION["cuentas"][$i]->getUsuario() == $_SESSION["user"]) {
+                $sentUser = true;
+                if ($_SESSION["cuentas"][$i]->getContrasena() == $pass){
+                    $sentPass = true;
+                    $_SESSION["rol"] = $_SESSION["cuentas"][$i]->getRol();
+                    break;
                 }
-                break;
             }
-        }  
+        }
+
+        if($sentUser) {
+            if ($sentPass){
+                header("Location: inventario.php");
+            }else{
+                echo "El usuario o la contraseña son INCORRECTOS";
+            }
+        } else {
+            echo "la cuenta no existe";
+        }
     }
 ?>

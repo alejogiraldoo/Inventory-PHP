@@ -1,7 +1,12 @@
 <?php
-    include "../frontEnd/inventario/inventario.html";
     include "Producto.php";
+
     session_start();
+
+    if ($_SESSION["rol"] == "2") {
+        echo "<a href='agregar.php'>Agregar Producto |</a>";
+    }
+    include "../frontEnd/inventario/inventario.html";
 
     if (!isset($_SESSION["productos"])){
         $_SESSION["productos"] = array();
@@ -30,8 +35,14 @@
                     <td>".$_SESSION["productos"][$i]->getCantidad()."</td>
                     <td>".$_SESSION["productos"][$i]->getSucursal()."</td>
                     <td>
+            ";
+            if ($_SESSION["rol"] == "2") {
+                echo "
                         <a href='actualizar.php?codigo=".$_SESSION["productos"][$i]->getCodigo()."&nombre=".$_SESSION["productos"][$i]->getNombre()."&precio=".$_SESSION["productos"][$i]->getPrecio()."&cantidad=".$_SESSION["productos"][$i]->getCantidad()."&sucursal=".$_SESSION["productos"][$i]->getSucursal()."'>Actualizar |</a>
-                        <a href='eliminar.php?codigo=".$_SESSION["productos"][$i]->getCodigo()."'>Eliminar |</a>
+                        <a href='eliminar.php?codigo=".$_SESSION["productos"][$i]->getCodigo()."'>Eliminar |</a>     
+                ";
+            }
+            echo "
                         <a href='vender.php?codigo=".$_SESSION["productos"][$i]->getCodigo()."&nombre=".$_SESSION["productos"][$i]->getNombre()."&precio=".$_SESSION["productos"][$i]->getPrecio()."&cantidad=".$_SESSION["productos"][$i]->getCantidad()."&sucursal=".$_SESSION["productos"][$i]->getSucursal()."'>Vender</a>
                     </td>
                 </tr>
