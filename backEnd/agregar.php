@@ -3,6 +3,9 @@
     include "Producto.php";
 
     session_start();
+
+    include "check-session.php";
+    
     if(isset($_POST["agregar"])) {
         $codigo = $_POST["codigo"];
         $nombre = $_POST["nombre"];

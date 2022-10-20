@@ -3,9 +3,14 @@
 
     session_start();
 
+    include "check-session.php";
+
     if ($_SESSION["rol"] == "2") {
         echo "<a href='agregar.php'>Agregar Producto |</a>";
     }
+
+    echo "<a href='logout.php'>Cerrar Sesión</a>";
+
     include "../frontEnd/inventario/inventario.html";
 
     if (!isset($_SESSION["productos"])){

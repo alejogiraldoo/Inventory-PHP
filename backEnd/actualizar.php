@@ -3,6 +3,8 @@
     include "Producto.php";
     session_start();
 
+    include "check-session.php";
+
     if (isset($_GET["actualizar"])){
         $sent = false; 
         $codigo = $_GET["codigo"];

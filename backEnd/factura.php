@@ -3,6 +3,8 @@
     include "Producto.php";
     session_start();
 
+    include "check-session.php";
+
     $codigo = $_GET["codigo"];
     $cantidad = $_GET["cantidad"];
     $ced_cliente = $_GET["ced_cliente"];
