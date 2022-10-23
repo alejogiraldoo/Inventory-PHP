@@ -13,24 +13,8 @@
 <body>
     <main>
         <h1><b>Don Banano</b></h1>
-        <h2>Crear una Cuenta</h2>
-        <form action="registro.php" method="post">
-            <div class="mb-3">
-                <label for="exampleInputText1" class="form-label">Documento de Identidad</label>
-                <input name="cedula" type="number" class="form-control" id="exampleInputText" aria-describedby="textHelp" required/>
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputText1" class="form-label">Nombre Completo</label>
-                <input name="nombre" type="text" class="form-control" id="exampleText1" required />
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputText1" class="form-label">Telefono de Contacto</label>
-                <input name="telefono" type="tel" class="form-control" id="exampleText1" required />
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputText1" class="form-label">Direccion del Domicilio</label>
-                <input name="direccion" type="text" class="form-control" id="exampleText1" required />
-            </div>
+        <h2>Inicio de Sesión</h2>
+        <form action="login.php" method="post">
             <div class="mb-3">
                 <label for="exampleInputText1" class="form-label">Usuario</label>
                 <input name="user" type="text" class="form-control" id="exampleText1" required/>
@@ -39,9 +23,9 @@
                 <label for="exampleInputPassword1" class="form-label">Contraseña</label>
                 <input name="pass" type="password" class="form-control" id="exampleInputPassword1" required/>
             </div>
-            <button name="registrar" type="submit" class="btn btn-primary">Registrarse</button>
+            <button name="iniciar-sesion" type="submit" class="btn btn-primary">Iniciar Sesión </button>
             <br><br>
-            <p>¿Ya estás registrado? -><a href="login.php"> Iniciar Sesión</a></p>
+            <p>¿No estás registrado? -><a href="registro.php"> Registrarse</a></p> 
         </form>
     </main>
 </body>

@@ -4,14 +4,19 @@
         // ATRIBUTOS
         private $id;
         private $nombre;
+        private $telefono;
+        private $direccion;
         private $usuario;
         private $contrasena;
         private $rol;
 
+
         // CONSTRUCTOR
-        public function __construct($_id,$_nombre,$_usuario,$_contrasena,$_rol){
+        public function __construct($_id,$_nombre, $_telefono, $_direccion, $_usuario,$_contrasena,$_rol){
             $this->id = $_id;
             $this->nombre = $_nombre;
+            $this->telefono = $_telefono;
+            $this->direccion = $_direccion;
             $this->usuario = $_usuario;
             $this->contrasena = $_contrasena;
             $this->rol = $_rol;
@@ -25,6 +30,14 @@
 
         public function setNombre($_nombre){
             $this->nombre = $_nombre;
+        }
+
+        public function setTelefono($_telefono){
+            $this->telefono = $_telefono;
+        }
+
+        public function setDireccion($_direccion){
+            $this->direccion = $_direccion;
         }
 
         public function setUsuario($_usuario){
@@ -47,6 +60,14 @@
 
         public function getNombre(){
             return $this->nombre;
+        }
+        
+        public function getTelefono(){
+            return $this->telefono;
+        }
+
+        public function getDireccion(){
+            return $this->direccion;
         }
 
         public function getUsuario(){

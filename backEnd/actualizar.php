@@ -42,6 +42,7 @@
     $cantidad = $_GET["cantidad"];
     $precio = $_GET["precio"];
     $sucursal = $_GET["sucursal"];
+    
     echo '
         <main>
             <form action="actualizar.php" method="get">
@@ -59,7 +60,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Cantidad</label>
-                    <input name="cantidad" type="number" class="form-control" id="exampleInputPassword1" required value="'.$cantidad.'"/>
+                    <input name="cantidad" type="number" class="form-control" id="exampleInputPassword1" required value="'.$cantidad.'" min="1"/>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Sucursal</label>

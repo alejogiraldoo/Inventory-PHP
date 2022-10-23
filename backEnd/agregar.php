@@ -15,8 +15,11 @@
 
         array_push($_SESSION["productos"], new Producto($codigo, $nombre, $precio, $cantidad, $sucursal));
 
-        echo "<script>
-        window.alert('Producto agregado exitosamente. ');
-        </script>;";
+        echo "
+        <script>
+            window.alert('Producto agregado exitosamente. ');
+            window.history.back();
+        </script>;
+        ";
     }
 ?>

@@ -2,5 +2,5 @@
     session_start();
     unset($_SESSION["user"]);
     unset($_SESSION["rol"]);
-    header("location: registro.php");
+    header("location: login.php");
 ?>

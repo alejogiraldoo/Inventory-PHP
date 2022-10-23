@@ -13,14 +13,10 @@
     $dir_cliente = $_GET["dir_cliente"];
 
     echo "<h2>Datos del Cliente</h2>";
-    echo "Identificación del Cliente: ".$ced_cliente;
-    echo "<br><br>";
-    echo "Nombre del Cliente: ".$nom_cliente;
-    echo "<br><br>";
-    echo "N° de Telefono del Cliente: ".$tel_cliente;
-    echo "<br><br>";
-    echo "Dirección del Cliente: ".$dir_cliente;
-    echo "<br><br>";
+    echo "<p>Identificación del Cliente: ".$ced_cliente."</p>";
+    echo "<p>Nombre del Cliente: ".$nom_cliente."<p>";
+    echo "<p>N° de Telefono del Cliente: ".$tel_cliente."</p>";
+    echo "<p>Dirección del Cliente: ".$dir_cliente."</p>";
             
     for ($i=0; $i < count($_SESSION["productos"]); $i++) { 
         if($_SESSION["productos"][$i]->getCodigo() == $codigo) {
