@@ -71,23 +71,19 @@
                 <form action="vender.php" method="get">
                     <div class="mb-3">
                         <label for="exampleInputText1" class="form-label">Codigo</label>
-                        <input name="codigo" type="number" class="form-control" id="exampleInputText" aria-describedby="textHelp" value="'.$codigo.'" readonly/>
+                        <input name="codigo" type="number" class="form-control" id="exampleInputText" aria-describedby="textHelp" value="'.$_GET["codigo"].'" readonly/>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputText1" class="form-label">Nombre del Producto</label>
-                        <input name="nombre" type="text" class="form-control" id="exampleText1" required value="'.$_SESSION["productos"][$i]->getNombre().'" readonly/>
+                        <input name="nombre" type="text" class="form-control" id="exampleText1" required value="'.$_GET["nombre"].'" readonly/>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputText1" class="form-label">Precio</label>
-                        <input name="precio" type="number" class="form-control" id="exampleText1" required value="'.$_SESSION["productos"][$i]->getPrecio().'" readonly/>
+                        <input name="precio" type="number" class="form-control" id="exampleText1" required value="'.$_GET["precio"].'" readonly/>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Cantidad</label>
                         <input name="cantidad" type="number" class="form-control" id="exampleInputPassword1" min="1" required />
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Sucursal</label>
-                        <input name="sucursal" type="text" class="form-control" id="exampleInputPassword1" required value="'.$_SESSION["productos"][$i]->getSucursal().'"/>
                     </div>
                     <input name="vender" type="submit" class="btn btn-primary" value="Realizar Venta">
                     <br><br>
@@ -130,9 +126,9 @@
                     $total = $_SESSION["productos"][$i]->getCantidad() - $cantidad;
                     $_SESSION["productos"][$i]->setCantidad($total);
                     echo "¿Desea generar una factura? <br>";
-                    echo "<a href='factura.php?codigo=".$codigo."&cantidad=".$cantidad."&ced_cliente=".$ced_cliente."&nom_cliente=".$nom_cliente."&tel_cliente=".$tel_cliente."&dir_cliente=".$dir_cliente."'>Generar Factura</a>";
+                    echo "<a href='factura.php?codigo=".$_GET["codigo"]."&cantidad=".$_GET["cantidad"]."&ced_cliente=".$ced_cliente."&nom_cliente=".$nom_cliente."&tel_cliente=".$tel_cliente."&dir_cliente=".$dir_cliente."&nombre=".$_GET["nombre"]."&precio=".$_GET["precio"]."'>Generar Factura</a>";
                     break;
-                }  
+                }   
             }
         } 
 

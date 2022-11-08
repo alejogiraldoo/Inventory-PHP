@@ -64,7 +64,15 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Sucursal</label>
-                    <input name="sucursal" type="text" class="form-control" id="exampleInputPassword1" required value="'.$sucursal.'"/>
+                    <select name="sucursal" class="form-select" aria-label="Default select example" required>
+                        <option value="'.$sucursal.'" selected>'.$sucursal.' <- Valor Actual</option>
+                        <option value="La Naranja">La Naranja</option>
+                        <option value="El Mango">El Mango</option>
+                        <option value="La Mora">La Mora</option>
+                        <option value="El Guineo">El Guineo</option>
+                        <option value="La Auyama">La Auyama</option>
+                        <option value="El Banano">El Banano</option>
+                    </select>
                 </div>
                 <button name="actualizar" type="submit" class="btn btn-primary">Actualizar</button>
             </form>

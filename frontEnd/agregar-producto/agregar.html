@@ -23,7 +23,7 @@
         <form action="agregar.php" method="post">
             <div class="mb-3">
                 <label for="exampleInputText1" class="form-label">Codigo</label>
-                <input name="codigo" type="number" class="form-control" id="exampleInputText" aria-describedby="textHelp" required/>
+                <input name="codigo" type="number" class="form-control" id="exampleInputText" aria-describedby="textHelp" required min="1"/>
             </div>
             <div class="mb-3">
                 <label for="exampleInputText1" class="form-label">Nombre del Producto</label>
@@ -31,15 +31,23 @@
             </div>
             <div class="mb-3">
                 <label for="exampleInputText1" class="form-label">Precio</label>
-                <input name="precio" type="number" class="form-control" id="exampleText1" required/>
+                <input name="precio" type="number" class="form-control" id="exampleText1" required min="1"/>
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Cantidad</label>
-                <input name="cantidad" type="number" class="form-control" id="exampleInputPassword1" required/>
+                <input name="cantidad" type="number" class="form-control" id="exampleInputPassword1" required min="1"/>
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Sucursal</label>
-                <input name="sucursal" type="text" class="form-control" id="exampleInputPassword1" required/>
+                <select name="sucursal" class="form-select" aria-label="Default select example" required>
+                    <option value="" disabled selected>Elija una opción</option>
+                    <option value="La Naranja">La Naranja</option>
+                    <option value="El Mango">El Mango</option>
+                    <option value="La Mora">La Mora</option>
+                    <option value="El Guineo">El Guineo</option>
+                    <option value="La Auyama">La Auyama</option>
+                    <option value="El Banano">El Banano</option>
+                </select>
             </div>
             <button name="agregar" type="submit" class="btn btn-primary">Agregar</button>
         </form>
